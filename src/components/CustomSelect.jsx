@@ -1,4 +1,5 @@
 import Select from 'react-select';
+
 import styled from 'styled-components';
 
 export const CustomSelect = styled(Select).attrs({
@@ -8,9 +9,9 @@ export const CustomSelect = styled(Select).attrs({
       backgroundColor: 'var(--colors-ui-base)',
       color: 'var(--colors-text)',
       borderRadius: 'var(--radii)',
-      padding: 'var(0.25rem)',
+      padding: '0.25rem',
       border: 'none',
-      bosShadow: 'var(--shadow)',
+      boxShadow: 'var(--shadow)',
       height: '50px',
     }),
     option: (provided, state) => ({
@@ -25,19 +26,15 @@ export const CustomSelect = styled(Select).attrs({
   border-radius: var(--radii);
   font-family: var(--family);
   border: none;
-
   & > * {
     box-shadow: var(--shadow);
   }
-
   & input {
     padding-left: 0.25rem;
   }
-
   & * {
     color: var(--colors-text) !important;
   }
-
   & > div[id] {
     background-color: var(--colors-ui-base);
   }

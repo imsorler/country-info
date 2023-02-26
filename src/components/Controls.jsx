@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+
 import { Search } from './Search';
 import { CustomSelect } from './CustomSelect';
 
@@ -16,7 +17,6 @@ const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-
   @media (min-width: 767px) {
     flex-direction: row;
     justify-content: space-between;
@@ -29,8 +29,8 @@ export const Controls = ({ onSearch }) => {
   const [region, setRegion] = useState('');
 
   useEffect(() => {
-    console.log(search);
-    onSearch(search);
+    const regionValue = region?.value || '';
+    onSearch(search, regionValue);
   }, [search, region]);
 
   return (
@@ -38,7 +38,7 @@ export const Controls = ({ onSearch }) => {
       <Search search={search} setSearch={setSearch} />
       <CustomSelect
         options={options}
-        placeholder="Filter by region"
+        placeholder="Filter by Region"
         isClearable
         isSearchable={false}
         value={region}

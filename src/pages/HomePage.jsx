@@ -23,7 +23,7 @@ export const HomePage = ({ countries, setCountries }) => {
     }
 
     if (query) {
-      data = data.filter((c) => c.name.toLowerCase().includes(query.toLowerase));
+      data = data.filter((c) => c.name.toLowerCase().includes(query.toLowerCase()));
     }
 
     setFilteredCountries(data);
